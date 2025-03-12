@@ -1,0 +1,94 @@
+[
+  {
+    "title": "Árbol de rosas blanco",
+    "description": "Simboliza elegancia y fidelidad.",
+    "price": 9500,
+    "size": "22",
+    "images": ["rosas.jpg"]
+  },
+  {
+    "title": "Arbolito pequeño",
+    "description": "Un pequeño souvenir de recuerdo, ideal para regalar.",
+    "price": "1000",
+    "size": "7",
+    "images": ["souvenir.jpg", "souvenir2.jpg"]
+  },
+  {
+    "title": "Árbol de manzanas",
+    "description": "Árbol de manzanas (no) reales.",
+    "price": 28000,
+    "size": "30",
+    "images": ["manzanas.jpg"]
+  },
+
+  {
+    "title": "Árbol de limones",
+    "description": "Un pequeño limonero.",
+    "price": 28000,
+    "size": "30",
+    "images": ["limones.jpg", "limones2.jpg"]
+  },
+  {
+    "title": "Árbol de monedas",
+    "description": "Representa abundancia.",
+    "price": 9500,
+    "size": "20",
+    "images": ["monedas.jpg", "monedas2.jpg"]
+  },
+  {
+    "title": "Árbol de mariposas",
+    "description": "Simboliza esperanza y renovación.",
+    "price": 5500,
+    "size": "12",
+    "images": ["mariposas.jpg", "mariposas2.jpg", "mariposas3.jpg", "mariposas4.jpg"]
+  },
+  {
+    "title": "Árbol medialuna",
+    "description": "Símbolo de equilibrio y fortaleza interior.",
+    "price": 5500,
+    "size": "10",
+    "images": ["medialuna.jpg"]
+  },
+  {
+    "title": "Árbol blanco",
+    "description": "Simboliza paz.",
+    "price": 16000,
+    "size": "27",
+    "images": ["blanco.jpg"]
+  },
+  {
+    "title": "Árbol colgante",
+    "description": "Un árbol colgante.",
+    "price": 14500,
+    "size": "16",
+    "images": ["colgante.jpg"]
+  },
+  {
+    "title": "Árbol caracola",
+    "description": "Representa paciencia y constancia.",
+    "price": 9500,
+    "size": "20",
+    "images": ["caracol.jpg"]
+  },
+  {
+    "title": "Bonsai Jacarandá",
+    "description": "",
+    "price": 29900,
+    "size": "30",
+    "images": ["jacaranda.jpg", "jacaranda2.jpg", "jacaranda3.jpg"]
+  },
+  {
+    "title": "Árbol de cadenas",
+    "description": "Un sauce llorón, simboliza la compasión y la tristeza.",
+    "price": 9900,
+    "size": "20",
+    "images": ["cadenas.jpg"]
+  },
+  {
+    "title": "Árbol sobre roca",
+    "description": "Al borde del acantilado.",
+    "price": 15000,
+    "size": "18",
+    "images": ["roca.jpg", "roca2.jpg", "roca3.jpg", "roca4.jpg"]
+  }
+]

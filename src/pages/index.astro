@@ -1,0 +1,125 @@
+---
+import "../style.css";
+import products from "../products.json";
+import logo from "/public/logo.png"
+import minilogo from "/public/minilogo.png"
+import favicon from "/public/favicon.png"
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Miwsuki</title>
+    <link rel="shortcut icon" href={favicon.src} type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <!-- <a class="sitename" href="" onclick="scrollToTop(event)">Miwsuki</a> -->
+        <a class="sitename" href="#" onclick="scrollToTop(event)"><img class="navlogo" src={logo.src} alt=""></a>
+
+        <a href="https://www.instagram.com/miwsuki.art/">
+          <svg class="insta-icon-navbar" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              d="M3 11c0-3.771 0-5.657 1.172-6.828C5.343 3 7.229 3 11 3h2c3.771 0 5.657 0 6.828 1.172C21 5.343 21 7.229 21 11v2c0 3.771 0 5.657-1.172 6.828C18.657 21 16.771 21 13 21h-2c-3.771 0-5.657 0-6.828-1.172C3 18.657 3 16.771 3 13z"
+            ></path>
+            <circle cx="16.5" cy="7.5" r="1.5" fill="currentColor"></circle>
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+          </svg>
+        </a>
+      </div>
+
+      <div class="index-hero">
+        <div class="logo-container"><img class="logo" src={logo.src} alt="" /></div>
+        <!-- <h1 class="hero-title">Miwsuki</h1> -->
+        <p class="hero-subtitle">Piezas artesanales inspiradas en la belleza de la naturaleza.</p>
+        <div class="hero-buttons">
+          
+          <button class="insta-button" onclick="window.open('https://www.instagram.com/miwsuki.art/')">
+            <svg class="insta-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                stroke="currentColor"
+                stroke-width="2"
+                d="M3 11c0-3.771 0-5.657 1.172-6.828C5.343 3 7.229 3 11 3h2c3.771 0 5.657 0 6.828 1.172C21 5.343 21 7.229 21 11v2c0 3.771 0 5.657-1.172 6.828C18.657 21 16.771 21 13 21h-2c-3.771 0-5.657 0-6.828-1.172C3 18.657 3 16.771 3 13z"
+              ></path>
+              <circle cx="16.5" cy="7.5" r="1.5" fill="currentColor"></circle>
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+            </svg>
+            Visítame en Instagram
+          </button>
+
+          <!-- <button class="email-button" onclick="window.location='mailto:info@miwsuki.com'">
+            <svg class="email-icon" width="24" height="24" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm3.519 0L12 11.671L18.481 6H5.52zM20 7.329l-7.341 6.424a1 1 0 0 1-1.318 0L4 7.329V18h16V7.329z"
+              ></path>
+            </svg>
+            Email
+          </button> -->
+        </div>
+      </div>
+
+      <div class="product-grid">
+        {
+          products.map((product, index) => (
+            
+            
+            <div class="product-card">
+              <img class="product-card-minilogo" src={minilogo.src} alt="">
+              <a href={`product/${index + 1}`}>
+                <img class="product-card-image" src={"img/" + product.images[0]} alt="" />
+              </a>
+              <div class="product-card-info">
+                <p class="product-card-title">{product.title}</p>
+                <p class="product-card-subtitle"> </p>
+                {/* <p class="product-card-price">${product.price}</p> */}
+
+                <svg class="product-card-arrow" width="200" height="200" viewBox="0 0 72 72">
+                  <path
+                    fill="white"
+                    d="M49.212 51.534L67 35.036L49.212 18.538l-3.789 4.076l10.396 9.641H5v5.562h50.819l-10.396 9.642z"
+                  />
+                </svg>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <footer>
+        <a href="https://www.instagram.com/miwsuki.art"><img src={logo.src} alt=""></a>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<script>
+  // Mostrar el navbar al hacer scroll
+  window.onscroll = () => {
+    const distance = 300;
+    const navbar_selector = ".navbar";
+    const navbar = document.querySelector(navbar_selector) as HTMLElement;
+
+    if (!navbar) {
+      console.error("No se pudo seleccionar la navbar");
+      return;
+    }
+
+    if (document.body.scrollTop > distance || document.documentElement.scrollTop > distance) {
+      navbar.style.top = "0";
+    } else {
+      navbar.style.top = "-100px";
+    }
+  };
+
+  function scrollToTop(event) {
+    event.preventDefault(); // Evita el salto inmediato
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Desliza suavemente al inicio
+  }
+</script>

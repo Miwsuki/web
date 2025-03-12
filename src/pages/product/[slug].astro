@@ -1,0 +1,153 @@
+---
+// import ProductLayout from "../../layouts/ProductLayout.astro";
+
+import products from "../../products.json";
+import "../../style.css";
+import logo from "../../../public/logo.png";
+import favicon from "/public/favicon.png"
+
+export async function getStaticPaths() {
+  return products.map((_, index) => ({
+    params: { slug: `${index + 1}` }, // 🆕 Si no hay ID, se genera dinámicamente
+  }));
+}
+
+const { slug } = Astro.params;
+// const product = products.find((p) => p.id === Number(slug));
+const product = products.find((_, index) => `${index + 1}` === slug);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href={favicon.src} type="image/x-icon">
+
+    <title>Miwsuki</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="product-header">
+        <a class="product-home-link" href="../../index.html">Inicio</a>
+      </div>
+
+      <div class="product">
+        <div class="slider">
+          <div class="slides">
+            <!-- {{ for image of images }} -->
+            {product?.images.map((img) => <img src={"../../../img/" + img} alt="" class="slide" />)}
+          </div>
+          <button class="prev" onclick="prevSlide()">&#10094</button>
+          <button class="next" onclick="nextSlide()">&#10095</button>
+        </div>
+
+        <div class="product-info">
+          <h3 class="product-title">{product?.title}</h3>
+          {product?.description && <p class="product-description">{product.description}</p>}
+          {
+            product?.size && (
+              <p class="product-size">
+                <b>Altura:</b> {product.size}cm
+              </p>
+            )
+          }
+
+          <p class="product-price"><b>Precio:</b> ${product?.price}</p>
+
+          <div class="botones-consulta">
+            <button class="contact-insta-button" onclick={`window.open('https://ig.me/m/miwsuki.art/')`}>
+              Consultar por Instagram
+              <svg class="contact-icon contact-insta-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  stroke="currentColor"
+                  stroke-width="2"
+                  d="M3 11c0-3.771 0-5.657 1.172-6.828C5.343 3 7.229 3 11 3h2c3.771 0 5.657 0 6.828 1.172C21 5.343 21 7.229 21 11v2c0 3.771 0 5.657-1.172 6.828C18.657 21 16.771 21 13 21h-2c-3.771 0-5.657 0-6.828-1.172C3 18.657 3 16.771 3 13z"
+                ></path>
+                <circle cx="16.5" cy="7.5" r="1.5" fill="currentColor"></circle>
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+              </svg>
+              
+            </button>
+
+            <button
+              class="contact-email-button"
+              onclick={`window.open('mailto:info@miwsuki.com?subject=Consulta por: ${product!.title} ($${product!.price})')`}
+            >
+              Consultar por correo
+              <svg class="contact-icon contact-email-icon" width="24" height="24" viewBox="0 0 24 24"
+                ><path
+                  fill="currentColor"
+                  d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm3.519 0L12 11.671L18.481 6H5.52zM20 7.329l-7.341 6.424a1 1 0 0 1-1.318 0L4 7.329V18h16V7.329z"
+                ></path></svg
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <a href="https://www.instagram.com/miwsuki.art/"><img src={logo.src} alt="" /></a>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  /*   
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("./../../Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "PoppinsExtraBold";
+  src: url("Poppins-ExtraBold.ttf");
+} */
+</style>
+
+<script defer>
+  /* ——————————————————————————————————— IMAGE SLIDER ——————————————————————————————————— */
+
+  const slides = document.querySelectorAll(".slides img");
+  let slideIndex = 0;
+
+  document.addEventListener("DOMContentLoaded", initializeSlider);
+
+  function initializeSlider() {
+    if (slides.length === 1) {
+      // @ts-ignore
+      document.querySelector("button.prev").remove();
+      // @ts-ignore
+      document.querySelector("button.next").remove();
+    }
+
+    if (slides.length > 0) {
+      slides[slideIndex].classList.add("displaySlide");
+    }
+  }
+
+  function showSlide(index) {
+    if (index >= slides.length) {
+      slideIndex = 0;
+    } else if (index < 0) {
+      slideIndex = slides.length - 1;
+    }
+
+    slides.forEach((slide) => {
+      slide.classList.remove("displaySlide");
+    });
+    slides[slideIndex].classList.add("displaySlide");
+  }
+
+  function prevSlide() {
+    slideIndex--;
+    showSlide(slideIndex);
+  }
+
+  function nextSlide() {
+    slideIndex++;
+    showSlide(slideIndex);
+  }
+</script>
