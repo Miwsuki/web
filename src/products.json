@@ -1,10 +1,24 @@
 [
   {
+    "title": "Cuarzo rosa",
+    "description": "El cuarzo rosa es conocido como la piedra del amor incondicional y la sanación emocional.",
+    "price": 9000,
+    "size": "20",
+    "images": ["cuarzorosa.jpg", "cuarzorosa2.jpg"]
+  },
+  {
     "title": "Árbol de rosas blanco",
     "description": "Simboliza elegancia y fidelidad.",
     "price": 9500,
     "size": "22",
     "images": ["rosas.jpg"]
+  },
+  {
+    "title": "Árbol de monedas",
+    "description": "Representa abundancia y prosperidad.",
+    "price": 9500,
+    "size": "20",
+    "images": ["monedas.jpg", "monedas2.jpg"]
   },
   {
     "title": "Arbolito pequeño",
@@ -20,20 +34,12 @@
     "size": "30",
     "images": ["manzanas.jpg"]
   },
-
   {
     "title": "Árbol de limones",
-    "description": "Un pequeño limonero.",
+    "description": "Un pequeño limonero de limones amarillos.",
     "price": 28000,
     "size": "30",
     "images": ["limones.jpg", "limones2.jpg"]
-  },
-  {
-    "title": "Árbol de monedas",
-    "description": "Representa abundancia.",
-    "price": 9500,
-    "size": "20",
-    "images": ["monedas.jpg", "monedas2.jpg"]
   },
   {
     "title": "Árbol de mariposas",
@@ -58,21 +64,21 @@
   },
   {
     "title": "Árbol colgante",
-    "description": "Un árbol colgante.",
+    "description": "Un árbol colgante que se mece con el viento, representa resiliencia.",
     "price": 14500,
     "size": "16",
     "images": ["colgante.jpg"]
   },
   {
     "title": "Árbol caracola",
-    "description": "Representa paciencia y constancia.",
+    "description": "Representa paciencia y silencio.",
     "price": 9500,
     "size": "20",
     "images": ["caracol.jpg"]
   },
   {
     "title": "Bonsai Jacarandá",
-    "description": "",
+    "description": "Representa sabiduría y crecimiento espiritual.",
     "price": 29900,
     "size": "30",
     "images": ["jacaranda.jpg", "jacaranda2.jpg", "jacaranda3.jpg"]
@@ -86,7 +92,7 @@
   },
   {
     "title": "Árbol sobre roca",
-    "description": "Al borde del acantilado.",
+    "description": "Un árbol al borde del acantilado, representa constancia y templanza.",
     "price": 15000,
     "size": "18",
     "images": ["roca.jpg", "roca2.jpg", "roca3.jpg", "roca4.jpg"]
