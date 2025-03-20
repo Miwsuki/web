@@ -1,5 +1,12 @@
 [
   {
+    "title": "Arbol en acantilado",
+    "description": "Un árbol que pende sobre un acantilado de madera. Pieza única.",
+    "price": 18000,
+    "size": "20",
+    "images": ["risco.jpg", "risco2.jpg"]
+  },
+  {
     "title": "Cuarzo rosa",
     "description": "El cuarzo rosa es conocido como la piedra del amor incondicional y la sanación emocional.",
     "price": 9000,
