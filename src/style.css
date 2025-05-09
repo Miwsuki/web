@@ -80,8 +80,8 @@ html {
 .index-hero {
   text-align: center;
   background: rgba(100, 100, 100, 0.4) url(/jac.jpg);
-  background-position: 0% 40%;
-  background-size: 100%;
+  background-position: 0% 15%;
+  background-size: 120%;
   background-blend-mode: multiply;
   padding-block: 32px;
   margin-inline: var(--main-margin);
@@ -542,6 +542,12 @@ blockquote {
 /*                                   MOBILE                                   */
 /* -------------------------------------------------------------------------- */
 @media (width < 650px) {
+  .index-hero {
+    background-size: 130%;
+    background-position: 0% 0%;
+
+  }
+
 
   .product {
     flex-direction: column;
