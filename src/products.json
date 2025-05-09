@@ -21,6 +21,13 @@
     "images": ["ladera.jpg"]
   },
   {
+    "title": "Árbol de duraznos",
+    "description": "Un árbol de duraznos en miniatura.",
+    "price": 29000,
+    "size": "26",
+    "images": ["duraznos.jpg", "duraznos2.jpg"]
+  },
+  {
     "title": "Árbol en acantilado",
     "description": "Un árbol que pende sobre un acantilado de madera. Pieza única.",
     "price": 18000,

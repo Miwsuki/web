@@ -79,9 +79,9 @@ html {
 
 .index-hero {
   text-align: center;
-  background: rgba(100, 100, 100, 0.8) url(/jac.jpg);
-  background-position: 0% 0%;
-  background-size: 170%;
+  background: rgba(100, 100, 100, 0.4) url(/jac.jpg);
+  background-position: 0% 40%;
+  background-size: 100%;
   background-blend-mode: multiply;
   padding-block: 32px;
   margin-inline: var(--main-margin);
@@ -113,13 +113,6 @@ button {
   transition: var(--transition-speed);
 }
 
-.insta-button:hover,
-.email-button:hover {
-  transition: color var(--transition-speed);
-  filter: saturate(2) contrast(1) brightness(1.2);
-  /* outline: 2px solid white; */
-}
-
 .insta-icon,
 .email-icon {
   vertical-align: -6px;
@@ -127,7 +120,7 @@ button {
 }
 
 .insta-button {
-  /* background-color: rgba(50, 50, 50, 0.5); */
+  /* background-color: rgba(50, 50, 50, 0.2); */
   /* color: var(--light-color); */
   /* outline: 1px solid rgba(255, 255, 255, 1); */
   backdrop-filter: blur(var(--hero-buttons-blur));
@@ -140,6 +133,13 @@ button {
   background-color: rgba(255, 255, 255, 0.5);
   color: var(--dark-color);
   backdrop-filter: blur(var(--hero-buttons-blur));
+}
+
+.insta-button:hover,
+.email-button:hover {
+  transition: color var(--transition-speed);
+  filter: saturate(2) contrast(1) brightness(1.2);
+  /* outline: 2px solid white; */
 }
 
 .hero-buttons {
